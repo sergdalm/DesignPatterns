@@ -33,11 +33,13 @@ public class Translator implements RussianSpeakingEmployee {
 
 
     private WorkReportInKorean translateFromRussianToKorean() {
+        System.out.println(name + " is translating from Korean to Russian..");
         String[] russianText = workReportInRussian.getText().split(Pattern.quote(". "));
         String result = "";
         for(int i = 0; i < russianText.length; i++) {
             result = String.join(". ", result,  RusKorDic.get(russianText[i]));
         }
+        System.out.println(name + " is sending translated report to " + koreanSpeakingEmployee.getName());
         return new WorkReportInKorean(result);
     }
 
