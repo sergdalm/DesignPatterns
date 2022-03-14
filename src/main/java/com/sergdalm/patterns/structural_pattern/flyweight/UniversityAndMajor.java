@@ -8,4 +8,11 @@ public class UniversityAndMajor {
         University = university;
         this.major = major;
     }
+
+    @Override
+    public String toString() {
+        return " University: " + University +
+                ", major: " + major + '\'' +
+                '}';
+    }
 }
