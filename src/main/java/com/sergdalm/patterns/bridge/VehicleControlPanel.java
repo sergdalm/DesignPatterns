@@ -1,8 +1,10 @@
 package main.java.com.sergdalm.patterns.bridge;
 
-public interface CarControl {
+public interface VehicleControlPanel {
     void pushGas();
     void pushBreak();
     void turnToTheLeft();
     void turnToTheRight();
+    void showSpeed();
+    void showDirection();
 }
