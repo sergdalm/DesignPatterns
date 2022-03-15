@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Dumplings implements Product {
     private final String productName = "Dumplings";
-    private Map<RowMaterials, Integer> calculation;
+    private final Map<RowMaterials, Integer> calculation;
     private int volume;
 
 
@@ -17,6 +17,7 @@ public class Dumplings implements Product {
         calculation.put(RowMaterials.FLOUR, 200);
         calculation.put(RowMaterials.SPICES, 50);
         calculation.put(RowMaterials.PACKAGES, 10);
+        volume = 0;
     }
 
     @Override
@@ -25,7 +26,7 @@ public class Dumplings implements Product {
     }
 
     @Override
-    public Product makeProduct(Map<RowMaterials, Integer> rowMaterials, int volume) {
+    public void makeProduct(Map<RowMaterials, Integer> rowMaterials, int volume) {
         for (Map.Entry material : rowMaterials.entrySet()) {
             if(this.calculation.containsKey(material.getKey())) {
                 Integer calculationValue = this.calculation.get(material.getKey());
@@ -39,7 +40,6 @@ public class Dumplings implements Product {
             }
         }
         this.volume = volume;
-        return new Dumplings();
     }
 
     @Override

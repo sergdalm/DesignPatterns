@@ -3,15 +3,16 @@ package main.java.com.sergdalm.patterns.structural_pattern.facade;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Pelmeni implements Product {
-    private final String productName = "Pelmeni";
+public class FriedBroccoli implements Product {
+    private final String productName = "Broccoli";
     private final Map<RowMaterials, Integer> calculation;
     private int volume;
 
-    public Pelmeni() {
-        volume = 0;
+
+    //, DUMPLINGS, FRIED_BROCCOLI;
+    private FriedBroccoli() {
         calculation = new HashMap<>();
-        calculation.put(RowMaterials.BEEF, 30);
+        calculation.put(RowMaterials.BROCCOLI, 200);
         calculation.put(RowMaterials.FLOUR, 200);
         calculation.put(RowMaterials.SPICES, 50);
         calculation.put(RowMaterials.PACKAGES, 10);
@@ -37,6 +38,7 @@ public class Pelmeni implements Product {
             }
         }
         this.volume = volume;
+        return new FriedBroccoli();
     }
 
     @Override

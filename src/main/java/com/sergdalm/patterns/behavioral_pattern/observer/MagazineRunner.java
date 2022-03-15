@@ -6,7 +6,7 @@ public class MagazineRunner {
 
         Observer subscriber1 = new Subscriber("Vladimir");
         Observer subscriber2 = new Subscriber("Alex");
-        Observer subscriber3 = new Subscriber("Eugenue");
+        Observer subscriber3 = new Subscriber("Eugene");
 
         newYourTimes.addSubscriber(subscriber1);
         newYourTimes.addSubscriber(subscriber2);
